@@ -1,0 +1,111 @@
+// Modal
+.modal
+  position: relative
+
+  opacity: 0
+  pointer-events: none
+
+
+// Opened
+.modal.active
+  opacity: 1
+  pointer-events: auto
+
+
+// Overlay
+.modal__overlay
+  z-index: 4
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+
+  width: 100vw
+  height: 100vh
+  
+  display: flex
+  align-items: center
+  justify-content: center
+
+  background: rgba(0, 0, 0, 0.6)
+
+
+// Container
+.modal__container
+  overflow-y: auto
+  overflow-x: hidden
+  max-height: 100vh
+  max-width: 510px
+  width: 100%
+
+  position: relative
+
+  background: #fff
+
+
+// Content
+.modal__content
+  display: flex
+  flex-direction: column
+  padding: 40px 0
+
+
+// Footer
+.modal__footer
+  display: flex
+  align-items: stretch
+
+
+// Button
+.modal__btn
+  flex: 1
+  height: 56px
+
+  background: #EBEDEF
+  color: #A1A1A1
+  font-size: 16px
+  letter-spacing: 0.01em
+
+
+// Animations
+@keyframes mmfadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@keyframes mmfadeOut
+  from
+    opacity: 1
+  to
+    opacity: 0
+
+@keyframes mmslideIn
+  from
+    transform: scale(0.9)
+  to
+    transform: scale(1)
+
+@keyframes mmslideOut
+  from
+    transform: scale(1)
+  to
+    transform: scale(0.9)
+
+
+.modal[aria-hidden="false"] .modal__overlay
+  animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1)
+
+.modal[aria-hidden="false"] .modal__container
+  animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1)
+
+.modal[aria-hidden="true"] .modal__overlay
+  animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1)
+
+.modal[aria-hidden="true"] .modal__container
+  animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1)
+
+.modal .modal__container,
+.modal .modal__overlay
+  will-change: transform

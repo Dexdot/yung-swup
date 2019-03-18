@@ -1,0 +1,69 @@
+// <ul class="accordion-container">
+//   <li class="accordion">
+//     <button class="accordion__btn" type="button">Описание</button>
+//     <div class="accordion__content">
+//       Итс эджэнси
+//     </div>
+//   </li>
+// </ul>
+  
+
+// Accordion
+.accordion
+  position: relative
+
+  display: flex
+  flex-direction: column
+  align-items: stretch
+  justify-content: flex-start
+
+  
+// Num
+.accordion__num
+  position: absolute
+  top: 40px
+  left: 0
+
+
+// Button
+.accordion__btn
+  padding-right: 16px
+  width: 100%
+
+  position: relative
+  
+  text-align: left
+  font-size: 16px
+
+
+// Icons
+.accordion__btn
+  .i-arrow
+    position: absolute
+    top: 46%
+
+    right: 30px
+    width: 8px
+
+    transform: rotate(-90deg) translateX(50%)
+    transition: $trs
+
+  .i-close
+    position: absolute
+    top: 50%
+    right: 0
+
+    width: 13px
+    height: 13px
+
+    stroke: #000
+    transform: rotate(45deg) translateY(-50%)
+    transition: $trs
+
+
+// Opened
+.accordion__btn.is-open
+  .i-arrow
+    transform: rotate(90deg) translateX(-50%)
+  .i-close
+    transform: rotate(0) translateY(-50%)

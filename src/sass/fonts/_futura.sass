@@ -1,0 +1,34 @@
+@font-face
+  font-family: 'Futura PT Book'
+  src: url('../fonts/futura/subset-FuturaPT-Book.woff2') format('woff2'),url('../fonts/futura/subset-FuturaPT-Book.woff') format('woff')
+  font-style: normal
+  font-weight: 400
+  font-display: swap  
+
+@font-face
+  font-family: 'Futura PT'
+  src: url('../fonts/futura/subset-FuturaPT-Medium.woff2') format('woff2'),url('../fonts/futura/subset-FuturaPT-Medium.woff') format('woff')
+  font-style: normal
+  font-weight: 500
+  font-display: swap
+
+@font-face
+  font-family: 'Futura PT Demi'
+  src: url('../fonts/futura/subset-FuturaPT-Demi.woff2') format('woff2'),url('../fonts/futura/subset-FuturaPT-Demi.woff') format('woff')
+  font-style: normal
+  font-weight: 600
+  font-display: swap
+
+  
+=ft($weight: r)
+  @if $weight == r
+    font-family: 'Futura PT Book', sans-serif
+    font-weight: 400
+  @if $weight == m
+    font-family: 'Futura PT', sans-serif
+    font-weight: 500
+  @if $weight == d
+    font-family: 'Futura PT Demi', sans-serif
+    font-weight: 600
+
+

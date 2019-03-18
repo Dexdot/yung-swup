@@ -1,0 +1,49 @@
+.hero
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+
+  z-index: 3
+  position: absolute
+  top: 40%
+  bottom: 12%
+  right: $unit
+  
+  width: mix(7)
+  padding-right: mix(2)
+
+  @media (max-width: 1440px)
+    padding-right: mix(3)
+
+  @media (max-width: 999px)
+    display: none
+
+.hero__title
+  letter-spacing: 0.02em
+  +ft(r)
+  line-height: 1
+  +yo('font-size', (1300px: 64px, 2550px: 104px))
+
+.hero__btn
+  margin-top: auto
+  margin-bottom: 2rem
+
+.hero__text
+  margin-left: auto
+  transform: translateX(100%)
+  max-width: mix(2)
+
+  @media (max-width: 1440px)
+    max-width: mix(3)
+
+.hero-mob
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+  font-size: 6vmin
+
+  display: none
+  @media (max-width: 999px)
+    display: block
