@@ -1,11 +1,10 @@
 {
-  "name": "prisma",
+  "name": "swup-test",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "debil": "yarn build && yarn deploy",
-    "deploy": "now dist && cd dist && now alias yung",
+    "deploy": "yarn build && cd dist && now && now alias yung",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp",
     "build": "gulp build"
@@ -69,7 +68,6 @@
     }
   },
   "dependencies": {
-    "animejs": "^3.0.1",
-    "swupjs": "^1.7.0"
+    "animejs": "^3.0.1"
   }
 }

@@ -1,6 +1,5 @@
 /* eslint-disable */
 
-import '../router/index';
 import '../init/vh';
 import '../init/hero';
 

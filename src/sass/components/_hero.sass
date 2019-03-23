@@ -21,8 +21,14 @@
 .hero__title
   letter-spacing: 0.02em
   +ft(r)
-  line-height: 1
+  line-height: 0.9
   +yo('font-size', (1300px: 64px, 2550px: 104px))
+
+  cursor: pointer
+  transition: 0.5s cubic-bezier(.56,.1,.31,1.02)
+
+.hero__title:hover
+  opacity: 0.4
 
 .hero__btn
   margin-top: auto

@@ -19,13 +19,21 @@ export default class Hero {
     this.options = {
       targets: this.images,
       duration: 500,
-      easing: 'cubicBezier(.56,.1,.31,1.02)'
+      easing: 'cubicBezier(.56,.1,.31,1.02)',
+      begin: () => {
+        this.animating = true;
+      },
+      complete: () => {
+        this.animating = false;
+      }
     };
 
     this.x = 0;
     this.y = 0;
     this.followX = 0;
     this.followY = 0;
+
+    this.animating = false;
 
     this.setup();
     this.animate();
@@ -39,12 +47,24 @@ export default class Hero {
 
     // Mouseenter
     this.title.addEventListener('mouseenter', () => {
-      this.mouseenter();
+      if (!this.animating) {
+        this.mouseenter();
+      } else {
+        setTimeout(() => {
+          this.mouseenter();
+        }, this.options.duration);
+      }
     });
 
     // Mouseleave
     this.title.addEventListener('mouseleave', () => {
-      this.mouseleave();
+      if (!this.animating) {
+        this.mouseleave();
+      } else {
+        setTimeout(() => {
+          this.mouseleave();
+        }, this.options.duration);
+      }
     });
 
     // Click
